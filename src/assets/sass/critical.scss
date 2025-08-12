@@ -1,0 +1,352 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// CRITICAL PAGE STYLES
+// Above-the-fold and high-priority styles for the home page's landing section.
+// Put the first section of the home page in here, so it loads immediately.
+// The rest of the home page styles in local.css will be deferred and
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---         Auto Hero          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #auto-hero-rcr {
+        padding: clamp(7rem, 25.95vw, 14rem) 1rem 0;
+        padding-bottom: clamp(8rem, 25.95vw, 15rem);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        text-align: center;
+        font-family: "Daytona", Arial, sans-serif;
+    }
+
+    .rcr-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    .rcr-background::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.65;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .rcr-background img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .rcr-hero-container {
+        width: 100%;
+        max-width: calc(1280 / 16 * 1rem);
+        margin: auto;
+        position: relative;
+    }
+
+    .rcr-hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .rcr-badge {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .rcr-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .rcr-company-name {
+        display: block;
+        font-size: clamp(2.5rem, 6.4vw, 4rem);
+        font-weight: 900;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    .rcr-tagline {
+        display: block;
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        font-weight: 400;
+        color: var(--secondary);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .rcr-description {
+        font-size: clamp(1rem, 1.95vw, 1.25rem);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 auto 2rem;
+        max-width: 600px;
+    }
+
+    .rcr-action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+    .rcr-btn-emergency {
+        background: var(--primary);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .rcr-btn-emergency:hover {
+        background: var(--primaryLight);
+        transform: translateY(-2px);
+    }
+
+    .rcr-btn-quote {
+        padding: 1rem 2rem;
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .rcr-btn-quote:hover {
+        background: white;
+        color: var(--primary);
+    }
+
+    /* Stats Grid */
+    .rcr-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .rcr-stat-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--primary);
+    }
+
+    .rcr-stat-box:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.15);
+        border-left-color: var(--secondary);
+    }
+
+    .rcr-stat-box h3 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: white;
+        margin: 0 0 0.25rem 0;
+        font-family: "Daytona", Arial, sans-serif;
+    }
+
+    .rcr-stat-box p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .rcr-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 800px;
+    }
+
+    .rcr-action-buttons {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #auto-hero-rcr {
+        background: url("/assets/images/mechanic-working.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .rcr-background img {
+        display: none;
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #auto-hero-rcr {
+            .rcr-background::before {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        Services           -->
+<--- -------------------------- -*/
+
+#rcr-services {
+    padding: 4rem 1rem;
+    background: #f8f9fa;
+    position: relative;
+    z-index: 10;
+    margin-top: -4rem;
+}
+
+.rcr-services-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.rcr-services-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    text-align: center;
+    color: var(--headerColor);
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-family: "Daytona", Arial, sans-serif;
+}
+
+.rcr-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.rcr-service-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+    position: relative;
+}
+
+.rcr-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--secondary);
+}
+
+.rcr-service-header {
+    margin-bottom: 1rem;
+}
+
+.rcr-service-header h3 {
+    font-size: 1.3rem;
+    color: var(--headerColor);
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    font-family: "Daytona", Arial, sans-serif;
+}
+
+.rcr-service-line {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.rcr-service-card p {
+    color: var(--bodyTextColor);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+}
+
+.rcr-service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rcr-service-features li {
+    color: var(--bodyTextColor);
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.rcr-service-features li::before {
+    content: "▸";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Dark Mode Services */
+body.dark-mode #rcr-services {
+    background: var(--dark);
+}
+
+body.dark-mode .rcr-services-title {
+    color: white;
+}
+
+body.dark-mode .rcr-service-card {
+    background: var(--medium);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .rcr-service-card h3 {
+    color: white;
+}
+
+body.dark-mode .rcr-service-card p,
+body.dark-mode .rcr-service-features li {
+    color: var(--bodyTextColorWhite);
+}
