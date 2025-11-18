@@ -6,6 +6,1446 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
+<---     Wisdom Library Cards  -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .qura-library-content {
+        max-width: calc(1200 / 16 * 1rem);
+        margin: 0 auto;
+    }
+
+    .qura-library-intro {
+        text-align: center;
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        max-width: 700px;
+        margin: 0 auto 3rem;
+    }
+
+    .qura-library-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .qura-library-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .qura-library-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .qura-library-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .qura-library-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+        text-align: center;
+    }
+
+    .qura-library-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .qura-library-list li {
+        padding: 0.75rem 0 0.75rem 2rem;
+        position: relative;
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .qura-library-list li:last-child {
+        border-bottom: none;
+    }
+
+    .qura-library-list li::before {
+        content: '📚';
+        position: absolute;
+        left: 0;
+        font-size: 1rem;
+    }
+
+    .qura-library-cta {
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    .qura-library-note {
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 8px;
+        display: inline-block;
+    }
+
+    .qura-library-note strong {
+        color: var(--headerColor);
+    }
+
+    /* Reading Features Grid */
+    .qura-reading-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: calc(1100 / 16 * 1rem);
+        margin: 3rem auto 0;
+    }
+
+    .qura-reading-feature {
+        text-align: center;
+    }
+
+    .qura-reading-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .qura-reading-feature h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-reading-feature p {
+        line-height: 1.7;
+        color: var(--bodyTextColor);
+        margin: 0;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-library-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qura-reading-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .qura-library-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .qura-reading-features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        .qura-library-intro,
+        .qura-library-note {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .qura-library-note {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .qura-library-note strong {
+            color: #fff;
+        }
+
+        .qura-library-card {
+            background: var(--medium);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .qura-library-card h3 {
+            color: #fff;
+        }
+
+        .qura-library-list li {
+            color: var(--bodyTextColorWhite);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .qura-reading-feature h3 {
+            color: #fff;
+        }
+
+        .qura-reading-feature p {
+            color: var(--bodyTextColorWhite);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Future Features Card   -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .qura-future-content {
+        max-width: calc(1100 / 16 * 1rem);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .qura-future-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 3rem auto;
+    }
+
+    .qura-future-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        border-left: 4px solid var(--primary);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .qura-future-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .qura-future-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .qura-future-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-future-card p {
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        margin: 0;
+    }
+
+    .qura-future-cta {
+        margin-top: 3rem;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 8px;
+    }
+
+    .qura-future-cta p {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        color: var(--bodyTextColor);
+    }
+
+    .qura-future-cta strong {
+        color: var(--headerColor);
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-future-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        .qura-future-card {
+            background: var(--medium);
+            border-left-color: var(--primaryLight);
+        }
+
+        .qura-future-card h3 {
+            color: #fff;
+        }
+
+        .qura-future-card p {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .qura-future-cta {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .qura-future-cta p {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .qura-future-cta strong {
+            color: #fff;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Feature Page Styles     -->
+<--- -------------------------- -*/
+
+/* Phone Showcase Section */
+@media only screen and (min-width: 0rem) {
+    #qura-feature-phone {
+        background: #f8f9fa;
+        padding: clamp(4rem, 8vw, 6rem) 1rem;
+    }
+
+    .qura-feature-phone-content {
+        max-width: calc(1100 / 16 * 1rem);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .qura-feature-intro {
+        text-align: center;
+        max-width: 700px;
+    }
+
+    .qura-feature-badge {
+        display: inline-block;
+        background: var(--primary);
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .qura-feature-heading {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-tagline {
+        font-size: clamp(1.1rem, 2vw, 1.25rem);
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+    }
+
+    /* Single Video Wrapper - Centered */
+    /* Single Video Wrapper - Centered */
+/* Single Video Wrapper - Standard Video Aspect Ratio */
+@media only screen and (min-width: 0rem) {
+    .qura-single-video-wrapper {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .qura-single-video-wrapper .qura-video-card {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .qura-single-video-wrapper .qura-video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .qura-single-video-wrapper .qura-video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio - standard video */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1.5rem;
+    }
+
+    /* YouTube lite embed positioned absolutely inside wrapper */
+    .qura-single-video-wrapper .qura-youtube-lite {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        cursor: pointer;
+    }
+
+    .qura-single-video-wrapper .qura-youtube-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .qura-single-video-wrapper .qura-youtube-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 68px;
+        height: 48px;
+        background: rgba(255, 0, 0, 0.9);
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .qura-single-video-wrapper .qura-youtube-play::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid #fff;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+    }
+
+    .qura-single-video-wrapper .qura-youtube-lite:hover .qura-youtube-play {
+        background: rgba(255, 0, 0, 1);
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .qura-single-video-wrapper .qura-video-info h3 {
+        margin-bottom: 0.75rem;
+        color: var(--headerColor);
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .qura-single-video-wrapper .qura-video-info p {
+        line-height: 1.6;
+        margin: 0;
+        color: var(--bodyTextColor);
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    /* Feature Video Section Background */
+    #qura-feature-video {
+        background: #fff;
+    }
+
+    #qura-feature-video .qura-section-header h2 {
+        color: var(--headerColor);
+    }
+
+    #qura-feature-video .qura-section-header p {
+        color: var(--bodyTextColor);
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-single-video-wrapper {
+        max-width: 800px;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .qura-single-video-wrapper {
+        max-width: 900px;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #qura-feature-video {
+            background: var(--medium);
+            
+            .qura-section-header h2 {
+                color: #fff;
+            }
+            
+            .qura-section-header p {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+
+        .qura-single-video-wrapper .qura-video-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .qura-single-video-wrapper .qura-video-info h3 {
+            color: #fff;
+        }
+
+        .qura-single-video-wrapper .qura-video-info p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+    }
+}
+    // .qura-single-video-wrapper {
+    //     max-width: 500px;
+    //     margin: 0 auto;
+    // }
+
+    // .qura-single-video-wrapper .qura-video-card {
+    //     background: rgba(255, 255, 255, 0.08);
+    //     padding: 2rem;
+    //     border-radius: 12px;
+    //     border: 1px solid rgba(255, 255, 255, 0.15);
+    //     backdrop-filter: blur(10px);
+    // }
+
+    // .qura-single-video-wrapper .qura-video-wrapper {
+    //     position: relative;
+    //     width: 100%;
+    //     max-width: 300px;
+    //     margin: 0 auto 1.5rem;
+    //     padding-bottom: 177.78%; /* 9:16 aspect ratio for phone */
+    //     height: 0;
+    //     overflow: hidden;
+    //     border-radius: 8px;
+    //     background: #000;
+    //     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    // }
+
+    /* Feature Details Section */
+    #qura-feature-details {
+        background: #fff;
+    }
+
+    .qura-feature-details-grid {
+        max-width: calc(900 / 16 * 1rem);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .qura-feature-description h2 {
+        font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-description p {
+        font-size: 1.0625rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        color: var(--bodyTextColor);
+    }
+
+    .qura-feature-highlights h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .qura-feature-list li {
+        padding: 0.875rem 0 0.875rem 2rem;
+        position: relative;
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .qura-feature-list li:last-child {
+        border-bottom: none;
+    }
+
+    .qura-feature-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    /* Benefits Section */
+    .qura-section-alt {
+        background: #f8f9fa;
+    }
+
+    .qura-section-title {
+        text-align: center;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 900;
+        margin-bottom: 3rem;
+        color: var(--headerColor);    }
+
+    .qura-benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: calc(1100 / 16 * 1rem);
+        margin: 0 auto;
+    }
+
+    .qura-benefit-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .qura-benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .qura-benefit-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1;
+    }
+
+    .qura-benefit-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-benefit-card p {
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        margin: 0;
+    }
+
+    /* SEO Section */
+    #qura-feature-seo {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primaryLight) 100%);
+        color: #fff;
+    }
+
+    .qura-seo-content {
+        max-width: calc(900 / 16 * 1rem);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .qura-seo-content h2 {
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        color: #fff;
+    }
+
+    .qura-seo-content p {
+        font-size: 1.0625rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    .qura-keywords-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .qura-keyword-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s;
+    }
+
+    .qura-keyword-tag:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qura-feature-details-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .qura-benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #qura-feature-phone {
+            background: var(--dark);
+        }
+
+        .qura-feature-heading,
+        .qura-feature-description h2,
+        .qura-feature-highlights h3,
+        .qura-section-title,
+        .qura-benefit-card h3 {
+            color: #fff;
+        }
+
+        .qura-feature-tagline,
+        .qura-feature-description p,
+        .qura-feature-list li,
+        .qura-benefit-card p {
+            color: var(--bodyTextColorWhite);
+        }
+
+        #qura-feature-details {
+            background: var(--medium);
+        }
+
+        .qura-section-alt {
+            background: var(--dark);
+        }
+
+        .qura-benefit-card {
+            background: var(--medium);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #qura-feature-video {
+            .qura-section-header h2,
+            .qura-section-header p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/*-- -------------------------- -->
+<---    Qura Global Styles     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .qura-section {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+
+    .qura-section-dark {
+        background: linear-gradient(135deg, #2c5f7c 0%, #1a3d52 100%);
+        color: #fff;
+    }
+
+    .qura-container {
+        width: 100%;
+        max-width: calc(1280 / 16 * 1rem);
+        margin: 0 auto;
+    }
+
+    .qura-container-narrow {
+        max-width: calc(800 / 16 * 1rem);
+    }
+
+    .qura-section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .qura-section-header h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-section-header p {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--bodyTextColor);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .qura-divider {
+        border: 0;
+        border-bottom: 2px solid var(--primary);
+        margin: 3rem auto;
+        max-width: 100px;
+    }
+}
+
+/*-- -------------------------- -->
+<---    Qura Problem Section   -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #qura-problem {
+        background: #f7f7f7;
+    }
+
+    .qura-quote {
+        border-left: 4px solid #ec5453;
+        font-style: italic;
+        padding: 1.5rem 2rem;
+        margin: 2rem auto;
+        max-width: 800px;
+        background: rgba(236, 84, 83, 0.05);
+        border-radius: 4px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .qura-problem-content {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+    }
+
+    .qura-problem-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-problem-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    .qura-problem-list li {
+        padding: 0.75rem 0 0.75rem 2rem;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .qura-problem-list li::before {
+        content: '⚠';
+        position: absolute;
+        left: 0;
+        color: #ec5453;
+        font-size: 1.2rem;
+    }
+
+    .qura-solution-title {
+        text-align: center;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin: 3rem 0 2rem;
+        color: var(--headerColor);
+    }
+
+    /* Icons Grid */
+    .qura-icons-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 3rem 0;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .qura-icon-item {
+        text-align: center;
+    }
+
+    .qura-icon-wrapper {
+        width: 5rem;
+        height: 5rem;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .qura-icon-primary {
+        background: var(--primary);
+    }
+
+    .qura-icon-secondary {
+        background: var(--secondary);
+    }
+
+    .qura-icon-tertiary {
+        background: var(--primaryLight);
+    }
+
+    .qura-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: #fff;
+    }
+
+    .qura-icon-item h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--headerColor);
+    }
+
+    /* Success Box */
+    .qura-success-box {
+        background: rgba(0, 0, 0, 0.03);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 3rem;
+    }
+
+    .qura-success-box h4 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: var(--headerColor);
+    }
+
+    .qura-success-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .qura-success-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .qura-success-list li {
+        padding: 0.75rem 0 0.75rem 2rem;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .qura-success-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 900;
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .qura-success-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Dark Mode Problem Section */
+body.dark-mode #qura-problem {
+    background: var(--dark);
+}
+
+body.dark-mode .qura-problem-content h3,
+body.dark-mode .qura-solution-title,
+body.dark-mode .qura-icon-item h4,
+body.dark-mode .qura-success-box h4 {
+    color: #fff;
+}
+
+body.dark-mode .qura-problem-list li,
+body.dark-mode .qura-success-list li {
+    color: var(--bodyTextColorWhite);
+}
+
+body.dark-mode .qura-success-box {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .qura-quote {
+    background: rgba(236, 84, 83, 0.1);
+    color: var(--bodyTextColorWhite);
+}
+
+/*-- -------------------------- -->
+<---    Qura Video Section     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #qura-videos {
+        .qura-section-header h2,
+        .qura-section-header p {
+            color: #fff;
+        }
+    }
+
+    .qura-video-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin: 3rem 0;
+    }
+
+    .qura-video-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .qura-video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .qura-video-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 1.5rem;
+        padding-bottom: 177.78%; /* 9:16 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Lite YouTube Embed */
+    .qura-youtube-lite {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        cursor: pointer;
+    }
+
+    .qura-youtube-thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .qura-youtube-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 68px;
+        height: 48px;
+        background: rgba(255, 0, 0, 0.9);
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .qura-youtube-play::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid #fff;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+    }
+
+    .qura-youtube-lite:hover .qura-youtube-play {
+        background: rgba(255, 0, 0, 1);
+    }
+
+    .qura-video-info h3 {
+        margin-bottom: 0.75rem;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .qura-video-info p {
+        line-height: 1.6;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.95rem;
+    }
+
+    /* Social CTA */
+    .qura-social-cta {
+        margin-top: 3rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .qura-social-cta h3 {
+        margin-bottom: 0.5rem;
+        color: #fff;
+        font-size: 1.25rem;
+    }
+
+    .qura-social-cta p {
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+    }
+
+    .qura-social-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .qura-social-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        -decoration: none;
+        transition: all 0.3s;
+        color: #fff;
+    }
+
+    .qura-social-btn:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .qura-social-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: currentColor;
+    }
+
+    .qura-social-btn span {
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qura-video-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .qura-social-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop - 980px */
+@media only screen and (min-width: 61.25rem) {
+    .qura-video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .qura-video-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+}
+
+/*-- -------------------------- -->
+<---   Qura Feature Spotlights -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #qura-features {
+        background: #fff;
+    }
+
+    .qura-spotlight {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .qura-spotlight:last-child {
+        margin-bottom: 0;
+    }
+
+    .qura-spotlight-image {
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .qura-spotlight-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .qura-spotlight-content h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 0.5rem;
+        color: var(--headerColor);
+        line-height: 1.2;
+    }
+
+    .qura-spotlight-subtitle {
+        font-size: 0.95rem;
+        color: var(--bodyTextColor);
+        opacity: 0.8;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .qura-spotlight-content p {
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        color: var(--bodyTextColor);
+    }
+
+    .qura-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .qura-feature-list li {
+        padding: 0.5rem 0 0.5rem 1.75rem;
+        position: relative;
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+    }
+
+    .qura-feature-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 900;
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-spotlight {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .qura-spotlight-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .qura-spotlight-image {
+        flex: 1;
+        max-width: 45%;
+    }
+
+    .qura-spotlight-content {
+        flex: 1;
+    }
+}
+
+/* Dark Mode Features */
+body.dark-mode #qura-features {
+    background: var(--dark);
+}
+
+body.dark-mode .qura-spotlight-content h2 {
+    color: #fff;
+}
+
+body.dark-mode .qura-spotlight-subtitle,
+body.dark-mode .qura-spotlight-content p,
+body.dark-mode .qura-feature-list li {
+    color: var(--bodyTextColorWhite);
+}
+
+/*-- -------------------------- -->
+<---      Qura CTA Section     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #qura-cta {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primaryLight) 100%);
+        color: #fff;
+    }
+
+    .qura-section-cta {
+        padding: clamp(4rem, 8vw, 6rem) 1rem;
+    }
+
+    .qura-cta-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .qura-cta-header h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .qura-cta-header p {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.6;
+    }
+
+    .qura-waitlist-widget {
+        max-width: 600px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Dark Mode CTA */
+body.dark-mode #qura-cta {
+    background: linear-gradient(135deg, var(--primaryLight) 0%, var(--secondary) 100%);
+}
+
+/*-- -------------------------- -->
+<---       Qura Footer         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #qura-footer {
+        background: #1a1a1a;
+        padding: 3rem 1rem 2rem;
+        text-align: center;
+    }
+
+    .qura-footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+        flex-wrap: wrap;
+    }
+
+    .qura-footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+
+    .qura-footer-social a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+
+    .qura-footer-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: #fff;
+    }
+
+    .qura-footer-copyright {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+        margin: 0;
+    }
+}
+
+/* Dark Mode Footer */
+body.dark-mode #qura-footer {
+    background: var(--dark);
+}
+
+
+/*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
 

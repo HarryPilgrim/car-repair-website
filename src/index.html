@@ -1,506 +1,431 @@
 ---
-title: "Fix your car quick | Rapid Crash Repairs | Cavan, Ireland"
-description: "Fix your car at Rapid Crash Repairs"
+title: "Quit Porn Addiction | Qura App - Get Your Life Back"
+description: "Qura: The complete porn addiction recovery app. AI coach, progress tracking, and proven tools to quit porn for good. Join the waitlist for early access."
+preloadImg: '/assets/images/banner.jpg'
 permalink: "/"
-tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+tags: "sitemap"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <!-- Critical styles are loaded first -->
+    <!-- Critical styles loaded first - hero section only -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
-    <link rel="stylesheet" href="/assets/css/location-map.css">
-    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+    
+    <!-- Preload hero images -->
+    <link rel="preload" as="image" href="/assets/images/banner.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/pic01.webp" fetchpriority="high">
+    
+    <!-- Defer the rest of the page styles -->
     {% if kit.isProduction %}
         <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript>
             <link rel="stylesheet" href="/assets/css/local.css">
         </noscript>
-
     {% else %}
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
-
-    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
-    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
-    <!-- {% include "components/home-schema.html" %} -->
+    
+    <!-- LaunchList widget -->
+    <script src="https://getlaunchlist.com/js/widget.js" defer></script>
 {% endblock %}
 
 {% block body %}
 
 <!-- ============================================ -->
-<!--                  Auto Hero                   -->
+<!--                    Hero                      -->
 <!-- ============================================ -->
 
-<section id="auto-hero-rcr">
-    <div class="rcr-hero-container">
-        <!-- Main Content -->
-        <div class="rcr-hero-content">
-            <div class="rcr-hero-text">
-                <span class="rcr-badge">Established Workshop</span>
-                <h1 class="rcr-title">
-                    <span class="rcr-company-name">Rapid Crash Repairs</span>
-                    <span class="rcr-tagline">Cavan's Trusted Collision Repair Specialists</span>
-                </h1>
-                <p class="rcr-description">
-                    Professional collision repair and automotive services in Co. Cavan. 
-                    We work with all major insurance companies to get you back on the road quickly and safely.
-                </p>
-                <div class="rcr-action-buttons">
-                    <a href="tel:+353471234567" class="rcr-btn-emergency">
-                        Emergency Service
-                    </a>
-                    <a href="/contact/" class="rcr-btn-quote">Get Free Quote</a>
-                </div>
+<section id="qura-hero">
+    <div class="qura-hero-container">
+        <!-- Left: Text Content -->
+        <div class="qura-hero-content">
+            <h1 class="qura-hero-title">Qura</h1>
+            <h2 class="qura-hero-subtitle">Quit porn. Get your life back.</h2>
+            <p class="qura-hero-tagline">
+                Daily tools, an AI coach and panic-mode interventions to quit for good.
+            </p>
+            <p class="qura-hero-platform">App coming soon - Android/iOS</p>
+            <div class="qura-hero-actions">
+                <a href="#qura-cta" class="qura-btn qura-btn-primary">Claim Founding Spot</a>
             </div>
         </div>
-
-        <!-- Stats/Info Boxes -->
-        <div class="rcr-stats-grid">
-            <div class="rcr-stat-box">
-                <h3>24/7</h3>
-                <p>Emergency Service</p>
+        
+        <!-- Right: Phone Mockup -->
+        <div class="qura-phone-mockup">
+            <!-- Speaker notch -->
+            <div class="qura-phone-speaker"></div>
+            
+            <!-- Screen with rotating images -->
+            <div class="qura-phone-screen">
+                <img src="/assets/images/pic01.webp" alt="Qura progress tracker" class="qura-screen-img active" loading="eager">
+                <img src="/assets/images/pic02.webp" alt="Qura AI therapist" class="qura-screen-img" loading="lazy">
+                <img src="/assets/images/pic03.webp" alt="Qura breathing exercises" class="qura-screen-img" loading="lazy">
+                <img src="/assets/images/pic04.webp" alt="Qura recovery tools" class="qura-screen-img" loading="lazy">
+                <img src="/assets/images/pic05.webp" alt="Qura support features" class="qura-screen-img" loading="lazy">
             </div>
             
-            <div class="rcr-stat-box">
-                <h3>15+</h3>
-                <p>Years Experience</p>
-            </div>
-            
-            <div class="rcr-stat-box">
-                <h3>All</h3>
-                <p>Insurers Welcome</p>
-            </div>
-            
-            <div class="rcr-stat-box">
-                <h3>Cavan</h3>
-                <p>Based & Proud</p>
-            </div>
+            <!-- Home button -->
+            <div class="qura-phone-button"></div>
         </div>
     </div>
-
-    <!-- Background Image -->
-    <picture class="rcr-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 480, height: 800 }) | avif %}" type="image/avif">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 480, height: 800 }) | webp %}" type="image/webp">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 480, height: 800 }) | jpeg %}" type="image/jpeg">
-        <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1024, height: 768 }) | avif %}" type="image/avif">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1024, height: 768 }) | webp %}" type="image/webp">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1024, height: 768 }) | jpeg %}" type="image/jpeg">
-        <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1920, height: 1080 }) | avif %}" type="image/avif">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1920, height: 1080 }) | webp %}" type="image/webp">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" type="image/jpeg">
-        <img src="{% getUrl "/assets/images/mechanic-working.jpg" | resize({ width: 1920, height: 1080 }) | jpeg %}" alt="Mechanic working on car repair" width="1920" height="1080" loading="eager" decoding="async">
+    
+    <!-- Scroll indicator -->
+    <a href="#qura-problem" class="qura-scroll-more">Learn More</a>
+    
+    <!-- Background image -->
+    <picture class="qura-hero-bg">
+        <source media="(max-width: 600px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
+        <source media="(max-width: 1024px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
+        <img src="/assets/images/banner.jpg" alt="Background" width="1920" height="1080" loading="eager" decoding="async">
     </picture>
 </section>
 
 <!-- ============================================ -->
-<!--               Service Cards                  -->
+<!--               Problem Section                -->
 <!-- ============================================ -->
 
-<section id="rcr-services">
-    <div class="rcr-services-container">
-        <h2 class="rcr-services-title">Our Professional Services</h2>
-        <div class="rcr-services-grid">
-            <div class="rcr-service-card">
-                <div class="rcr-service-header">
-                    <h3>Collision Repair</h3>
-                    <div class="rcr-service-line"></div>
+<section id="qura-problem" class="qura-section">
+    <div class="qura-container">
+        <header class="qura-section-header">
+            <h2>Your Brain Has Been Hijacked</h2>
+            <blockquote class="qura-quote">
+                "Porn addiction isn't about morality—it's about brain chemistry. When you understand the science, you can reclaim control."
+            </blockquote>
+        </header>
+        
+        <!-- The Problem -->
+        <div class="qura-problem-content">
+            <h3>The Hidden Cost of Addiction</h3>
+            <p>Pornography hijacks your brain's reward system, flooding it with unnatural levels of dopamine. Over time, this leads to:</p>
+            <ul class="qura-problem-list">
+                <li><strong>Anxiety & Depression:</strong> Your brain loses sensitivity to normal pleasures</li>
+                <li><strong>Relationship Issues:</strong> Difficulty forming real intimate connections</li>
+                <li><strong>Lost Potential:</strong> Decreased motivation and focus on your goals</li>
+                <li><strong>Social Withdrawal:</strong> Shame and isolation from friends and family</li>
+            </ul>
+        </div>
+        
+        <hr class="qura-divider" />
+        
+        <!-- The Solution -->
+        <h3 class="qura-solution-title">Take Back Control with Qura</h3>
+        
+        <ul class="qura-icons-grid">
+            <li class="qura-icon-item">
+                <div class="qura-icon-wrapper qura-icon-primary">
+                    <svg class="qura-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+                    </svg>
                 </div>
-                <p>Expert panel beating, dent removal, and structural repairs using professional-grade equipment and techniques.</p>
-                <ul class="rcr-service-features">
-                    <li>Panel beating & straightening</li>
-                    <li>Dent removal (PDR available)</li>
-                    <li>Structural damage repair</li>
+                <h4>Heal Your Mind</h4>
+            </li>
+            <li class="qura-icon-item">
+                <div class="qura-icon-wrapper qura-icon-secondary">
+                    <svg class="qura-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+                <h4>Connect Authentically</h4>
+            </li>
+            <li class="qura-icon-item">
+                <div class="qura-icon-wrapper qura-icon-tertiary">
+                    <svg class="qura-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.5s4.5 2.04 4.5 10.5c0 2.49-1.04 5.57-1.67 7H9.17C8.54 18.57 7.5 15.49 7.5 13 7.5 4.54 12 2.5 12 2.5m0 2.29c-1.7.85-3 3.8-3 8.21 0 1.68.59 3.66 1.09 5h3.82c.5-1.34 1.09-3.32 1.09-5 0-4.41-1.3-7.36-3-8.21M14 21v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1h4m-4-10l2-1 2 1c.33 1.67.5 3.33.5 5h-5c0-1.67.17-3.33.5-5z"/>
+                    </svg>
+                </div>
+                <h4>Achieve Your Dreams</h4>
+            </li>
+        </ul>
+        
+        <!-- Success Metrics -->
+        <div class="qura-success-box">
+            <h4>The Freedom You Deserve</h4>
+            <div class="qura-success-grid">
+                <ul class="qura-success-list">
+                    <li>Feel confident in social situations</li>
+                    <li>Build meaningful relationships</li>
+                    <li>Increase energy and motivation</li>
                 </ul>
-            </div>
-            
-            <div class="rcr-service-card">
-                <div class="rcr-service-header">
-                    <h3>Paint & Refinishing</h3>
-                    <div class="rcr-service-line"></div>
-                </div>
-                <p>State-of-the-art spray booth facilities with computerized color matching for perfect results every time.</p>
-                <ul class="rcr-service-features">
-                    <li>Full vehicle respray</li>
-                    <li>Spot repairs & touch-ups</li>
-                    <li>Color matching technology</li>
-                </ul>
-            </div>
-            
-            <div class="rcr-service-card">
-                <div class="rcr-service-header">
-                    <h3>Insurance Claims</h3>
-                    <div class="rcr-service-line"></div>
-                </div>
-                <p>Streamlined insurance process with direct billing to all major insurers. We handle the paperwork for you.</p>
-                <ul class="rcr-service-features">
-                    <li>Direct insurer billing</li>
-                    <li>Claims assistance & guidance</li>
-                    <li>No upfront payment required</li>
-                </ul>
-            </div>
-            
-            <div class="rcr-service-card">
-                <div class="rcr-service-header">
-                    <h3>Recovery & Towing</h3>
-                    <div class="rcr-service-line"></div>
-                </div>
-                <p>24/7 emergency vehicle recovery service throughout County Cavan and surrounding areas.</p>
-                <ul class="rcr-service-features">
-                    <li>24/7 emergency response</li>
-                    <li>Professional towing equipment</li>
-                    <li>County-wide coverage</li>
+                <ul class="qura-success-list">
+                    <li>Improve focus and productivity</li>
+                    <li>Experience genuine happiness</li>
+                    <li>Follow your true passions</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--              Video Features                  -->
+<!-- ============================================ -->
 
-    <section id="RPsbs-313">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 482, height: 536 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 482, height: 536 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 482, height: 536 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 802, height: 892 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 802, height: 892 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 802, height: 892 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/carfield.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="lawyers" width="522" height="581" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 366, height: 354 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 366, height: 354 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 366, height: 354 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 600, height: 578 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 600, height: 578 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 600, height: 578 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/man.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/man.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" alt="gavel" width="390" height="376" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-content">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Rapid Crash Repairs</h2>
-                <p class="cs-text">
-                    Serving the Cavan community for over 15 years, Rapid Crash Repairs has built a reputation as the most trusted collision repair specialist in the region. Located on Dublin Road in Drumlion, we've helped thousands of drivers get back on the road safely after accidents. Our team combines traditional craftsmanship with modern technology to deliver exceptional results every time.
-                </p>
-                <p class="cs-text">
-                    We work directly with all major insurance companies, making the claims process as smooth as possible for our customers. From minor dents to major collision repairs, our fully equipped workshop handles everything with professionalism and care.
-                </p>
-                <div class="cs-quote">
-                    <span class="cs-quote-text">
-                        "Rapid Crash Repairs did an amazing job on my car after a bad accident. You'd never know it was damaged - looks better than new! The team kept me updated throughout and handled everything with the insurance company. Highly recommended."
-                    </span>
-                    <span class="cs-name">Sarah Murphy</span>
-                    <span class="cs-job">Satisfied Customer</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="quote" width="136" height="77">
-                </div>
-                <a href="/about/" class="cs-button-solid">Learn More About Us</a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ============================================ -->
-    <!--            Map          -->
-    <!-- ============================================ -->
-
-
-    {% include 'components/location-map.html' %}
-
-    <!-- ============================================ -->
-    <!--             Side By Side Reverse             -->
-    <!-- ============================================ -->
-
-    <section id="RPsbsr-313">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="lawyers" width="522" height="581" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" alt="gavel" width="390" height="376" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-content">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Stitch Law</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <a href="/about/" class="cs-button-solid">About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Gallery                    -->
-    <!-- ============================================ -->
-
-    <section id="gallery-48">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Our Portfolio</span>
-                <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
-            </div>
-            <div class="cs-image-group">
-                <div class="cs-row cs-row-1">
-                    <!-- Row 1-->
-                    <picture class="cs-picture cs-picture-1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 182, height: 250 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 182, height: 250 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 182, height: 250 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 634, height: 798 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 634, height: 798 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 634, height: 798 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" alt="new hallway" width="413" height="567" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 634, height: 886 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 634, height: 886 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 634, height: 886 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="new home construction" width="413" height="629" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-3">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 182, height: 226 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 182, height: 226 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 182, height: 226 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 634, height: 720 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 634, height: 720 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 634, height: 720 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" alt="building a new wall" width="413" height="512" loading="lazy" decoding="async">
-                    </picture>
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-                <!-- Row 2 -->
-                <div class="cs-row cs-row-2">
-                    <picture class="cs-picture cs-picture-1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 182, height: 216 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 182, height: 216 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 182, height: 216 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 634, height: 692 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 634, height: 692 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 634, height: 692 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" alt="new kitchen" width="413" height="492" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 182, height: 228 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 182, height: 228 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 182, height: 228 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 634, height: 728 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 634, height: 728 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 634, height: 728 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | jpeg %}" alt="apartment addition" width="413" height="517" loading="lazy" decoding="async">
-                    </picture>
-
-                    <picture class="cs-picture cs-picture-3">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 634, height: 886 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 634, height: 886 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 634, height: 886 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="kew kitchen cabinets" width="413" height="629" loading="lazy" decoding="async">
-                    </picture>
-
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-                <!-- Row 3 -->
-                <div class="cs-row cs-row-3">
-                    <picture class="cs-picture cs-picture-1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 634, height: 880 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 634, height: 880 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 634, height: 880 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | jpeg %}" alt="new black window structure" width="413" height="625" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 182, height: 198 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 182, height: 198 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 182, height: 198 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 634, height: 636 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 634, height: 636 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 634, height: 636 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | jpeg %}" alt="kitchen rebovation" width="413" height="452" loading="lazy" decoding="async">
-                    </picture>
-
-                    <picture class="cs-picture cs-picture-3">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 634, height: 886 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 634, height: 886 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 634, height: 886 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="bathroom renovation" width="413" height="629" loading="lazy" decoding="async">
-                    </picture>
-
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-            </div>
-            <a href="/project-one/" class="cs-button-solid">View a Project</a>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Reviews                    -->
-    <!-- ============================================ -->
-
-    <section id="reviews-67">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Our Reviews</span>
-                <h2 class="cs-title">Words From Our Customers</h2>
-                <p class="cs-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
-            </p>
-            </div>
-            <ul class="cs-card-group">
-                <!-- Review 1 -->
-                <li class="cs-item">
-                    <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/newsvgs/profile.svg" alt="profile picture" width="80" height="80">
-                    <p class="cs-item-text">
-                    Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, debitis!
-                </p>
-                    <div class="cs-info">
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Jon Doe</span>
-                            <span class="cs-desc">Homeowner</span>
-                        </div>
-                        <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="96" height="16">
+<section id="qura-videos" class="qura-section qura-section-dark">
+    <div class="qura-container">
+        <header class="qura-section-header">
+            <h2>See Qura in Action</h2>
+            <p>Watch how our tools help you break free and reclaim your life</p>
+        </header>
+        
+        <div class="qura-video-grid">
+            <!-- Video 1: Progress Tracker -->
+            <article class="qura-video-card">
+                <div class="qura-video-wrapper">
+                    <div class="qura-youtube-lite" data-video-id="t3WikraXsz8">
+                        <img class="qura-youtube-thumb" 
+                             src="https://i.ytimg.com/vi/t3WikraXsz8/hqdefault.jpg" 
+                             alt="Progress Tracker Demo" 
+                             loading="lazy"
+                             width="480"
+                             height="360">
+                        <button class="qura-youtube-play" aria-label="Play video"></button>
                     </div>
+                </div>
+                <div class="qura-video-info">
+                    <h3>📊 Progress Tracker</h3>
+                    <p>Track your 🌽 free days, include NoFap if you want. Set your targets, and see graphically how you are doing. Number 1 in features - because what gets measured gets managed.</p>
+                </div>
+            </article>
+            
+            <!-- Video 2: AI Therapist -->
+            <article class="qura-video-card">
+                <div class="qura-video-wrapper">
+                    <div class="qura-youtube-lite" data-video-id="ftFkfkieGi8">
+                        <img class="qura-youtube-thumb" 
+                             src="https://i.ytimg.com/vi/ftFkfkieGi8/hqdefault.jpg" 
+                             alt="Aida AI Demo" 
+                             loading="lazy"
+                             width="480"
+                             height="360">
+                        <button class="qura-youtube-play" aria-label="Play video"></button>
+                    </div>
+                </div>
+                <div class="qura-video-info">
+                    <h3>🤖 Aida, Your AI Therapist</h3>
+                    <p>Cleverly designed to have memory, to remember you, and follow your progress. She'll be there to grow with you, and help you succeed. Never face urges alone again.</p>
+                </div>
+            </article>
+
+            <!-- Video 3: Breathing Exercises -->
+            <article class="qura-video-card">
+                <div class="qura-video-wrapper">
+                    <div class="qura-youtube-lite" data-video-id="WkHdTqHisSU">
+                        <img class="qura-youtube-thumb" 
+                             src="https://i.ytimg.com/vi/WkHdTqHisSU/hqdefault.jpg" 
+                             alt="Breathing Exercises Demo" 
+                             loading="lazy"
+                             width="480"
+                             height="360">
+                        <button class="qura-youtube-play" aria-label="Play video"></button>
+                    </div>
+                </div>
+                <div class="qura-video-info">
+                    <h3>🫁 Breathing Exercises</h3>
+                    <p>Immensely useful techniques to control urges, to calm anxiety. Qura comes with full visual and sound cues, reset your mind and regain control.</p>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Social CTA -->
+        <div class="qura-social-cta">
+            <h3>Want More Updates?</h3>
+            <p>Follow our journey and get daily recovery tips</p>
+            <ul class="qura-social-grid">
+                <li>
+                    <a href="https://x.com/Quraapp" class="qura-social-btn" aria-label="Follow us on X/Twitter">
+                        <svg class="qura-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        <span>X/Twitter</span>
+                    </a>
                 </li>
-                <!-- Review 2 -->
-                <li class="cs-item">
-                    <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/newsvgs/profile.svg" alt="profile picture" width="80" height="80">
-                    <p class="cs-item-text">
-                    Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
-                </p>
-                    <div class="cs-info">
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Jon Doe</span>
-                            <span class="cs-desc">Homeowner</span>
-                        </div>
-                        <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="96" height="16">
-                    </div>
+                <li>
+                    <a href="https://reddit.com/r/QuraApp" class="qura-social-btn" aria-label="Join our Reddit community">
+                        <svg class="qura-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176
+                            -7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                        </svg>
+                        <span>Reddit</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tiktok.com/@quraapp" class="qura-social-btn" aria-label="Follow us on TikTok">
+                        <svg class="qura-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                        <span>TikTok</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/qura.app" class="qura-social-btn" aria-label="Follow us on Instagram">
+                        <svg class="qura-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
                 </li>
             </ul>
-            <a href="/reviews/" class="cs-button-solid">Read All Reviews</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    {% include 'sections/cta.html' %}
+<!-- ============================================ -->
+<!--            Feature Spotlights                -->
+<!-- ============================================ -->
+
+<section id="qura-features" class="qura-section">
+    <div class="qura-container">
+        <!-- Feature 1: Recovery Toolkit -->
+        <article class="qura-spotlight">
+            <div class="qura-spotlight-image">
+                <picture>
+                    <source srcset="/assets/images/feature-science.webp" type="image/webp">
+                    <img src="/assets/images/feature-science.jpg" 
+                         alt="Science-backed recovery tools" 
+                         loading="lazy"
+                         width="600"
+                         height="400">
+                </picture>
+            </div>
+            <div class="qura-spotlight-content">
+                <h2>Your Complete Recovery Toolkit</h2>
+                <p class="qura-spotlight-subtitle">Science-Backed & Battle-Tested</p>
+                <p><strong>Everything you need to heal:</strong> Track your progress with detailed analytics. Master powerful breathing techniques like Buteyko. Work through CBT/ACT exercises. Access a curated library of Biblical, Stoic, and Taoist wisdom to find your path.</p>
+                <ul class="qura-feature-list">
+                    <li>Smart progress tracking & insights</li>
+                    <li>Proven breathing & grounding exercises</li>
+                    <li>Wisdom texts & recovery worksheets</li>
+                </ul>
+            </div>
+        </article>
+        
+        <!-- Feature 2: Urge Prevention -->
+        <article class="qura-spotlight qura-spotlight-reverse">
+            <div class="qura-spotlight-image">
+                <picture>
+                    <source srcset="/assets/images/feature-shield.webp" type="image/webp">
+                    <img src="/assets/images/feature-shield.jpg" 
+                         alt="Urge prevention tools" 
+                         loading="lazy"
+                         width="600"
+                         height="400">
+                </picture>
+            </div>
+            <div class="qura-spotlight-content">
+                <h2>Stop Urges Before They Start</h2>
+                <p class="qura-spotlight-subtitle">Your 24/7 Defense System</p>
+                <p><strong>Never fight alone:</strong> Meet Aida, your AI companion who remembers your journey and provides instant support. Advanced content blocking that's actually hard to bypass. Crisis mode that shifts your mental state with tasks and interventions—not just motivational quotes.</p>
+                <ul class="qura-feature-list">
+                    <li>Aida AI - always there, always understanding</li>
+                    <li>Multi-layer content blocking</li>
+                    <li>Smart panic button with real interventions</li>
+                </ul>
+            </div>
+        </article>
+        
+        <!-- Feature 3: Complete Solution -->
+        <article class="qura-spotlight">
+            <div class="qura-spotlight-image">
+                <picture>
+                    <source srcset="/assets/images/feature-together.webp" type="image/webp">
+                    <img src="/assets/images/feature-together.jpg" 
+                         alt="Complete porn addiction recovery app" 
+                         loading="lazy"
+                         width="600"
+                         height="400">
+                </picture>
+            </div>
+            <div class="qura-spotlight-content">
+                <h2>Your Complete Porn Addiction App</h2>
+                <p class="qura-spotlight-subtitle">Quit Porn for Good: Proven Methods</p>
+                <p><strong>More than a porn blocker:</strong> Qura is the comprehensive porn addiction recovery app that combines content blocking, progress tracking, and therapeutic tools. Whether you're dealing with PIED, seeking a NoFap alternative, or ready to quit porn completely, our evidence-based approach delivers real results.</p>
+                <ul class="qura-feature-list">
+                    <li>Porn addiction recovery program</li>
+                    <li>Smart porn blocker app features</li>
+                    <li>NoFap app alternative with AI support</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                CTA / Waitlist                -->
+<!-- ============================================ -->
+
+<section id="qura-cta" class="qura-section qura-section-cta">
+    <div class="qura-container qura-container-narrow">
+        <header class="qura-cta-header">
+            <h2>Ready to Reclaim Your Life?</h2>
+            <p>Join the waitlist for exclusive early access and founding member perks.<br>
+            Your future self will thank you.</p>
+        </header>
+        
+        <!-- LaunchList Widget -->
+        <div class="qura-waitlist-widget">
+            <div class="launchlist-widget" data-key-id="oLv5X0" data-height="180px"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Footer                      -->
+<!-- ============================================ -->
+
+<footer id="qura-footer" class="qura-footer">
+    <div class="qura-container">
+        <ul class="qura-footer-social">
+            <li>
+                <a href="https://x.com/Quraapp" aria-label="X/Twitter">
+                    <svg class="qura-footer-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://reddit.com/r/QuraApp" aria-label="Reddit">
+                    <svg class="qura-footer-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiktok.com/@quraapp" aria-label="TikTok">
+                    <svg class="qura-footer-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/qura.app" aria-label="Instagram">
+                    <svg class="qura-footer-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0
+                        1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:hello@quraapp.com" aria-label="Email">
+                    <svg class="qura-footer-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        
+        <p class="qura-footer-copyright">
+            &copy; 2025 Qura. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- ============================================ -->
+<!--                 JavaScript                   -->
+<!-- ============================================ -->
+
+<!-- Load Qura JS -->
+<script src="/assets/js/qura.js" defer></script>
+<script src="/assets/js/nav.js" defer></script>
+
 {% endblock %}

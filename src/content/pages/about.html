@@ -1,15 +1,15 @@
 ---
-title: "About | Code Stitch Web Designs"
-description: "Meta description for the page"
+title: "About Qura | Our Mission to Help You Break Free"
+description: "Learn about Harry and why he built Qura. After overcoming porn addiction himself using these exact tools, he's dedicated to helping others find freedom."
 permalink: "/about/"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
     <link rel="stylesheet" href="/assets/css/about.css">
+        <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/local.css"/>
 {% endblock %}
 
 {% block body %}
@@ -20,85 +20,191 @@ permalink: "/about/"
 
     <div id="banner-310">
         <div class="cs-container">
-            <span class="cs-int-title">About Us</span>
+            <span class="cs-int-title">About Qura</span>
             <div class="cs-breadcrumbs">
                 <a href="/" class="cs-link">Home</a>
-                <a href="/about/" class="cs-link cs-active">About Us</a>
+                <a href="/about/" class="cs-link cs-active">About</a>
             </div>
         </div>
         <!--Background Image-->
         <picture class="cs-background">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 600px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
             <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 1024px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
             <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <img src="/assets/images/banner.jpg" alt="About Qura" width="1920" height="482" loading="eager" decoding="async">
         </picture>
     </div>
 
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
+      <!-- ============================================ -->
+    <!--                 Founder Story                -->
     <!-- ============================================ -->
 
-    <section id="RPsbs-313">
+    <section class="qura-section">
         <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="lawyers" width="522" height="581" decoding="async">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" alt="gavel" width="390" height="376" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-content">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About CodeStitch</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-quote">
-                    <span class="cs-quote-text">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </span>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="gavel" width="136" height="77">
+            <div class="qura-feature-phone-content">
+                
+                <!-- Photo -->
+                <div style="width: 100%; max-width: 400px; flex-shrink: 0;">
+                    <img src="/assets/images/founder.jpg" 
+                         alt="Harry - Qura Founder" 
+                         style="width: 100%; height: auto; border-radius: 50%; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);"
+                         width="400" 
+                         height="400" 
+                         loading="lazy">
                 </div>
-                <a href="/contact/" class="cs-button-solid">Get in Touch</a>
+                
+                <!-- Story -->
+                <div class="qura-feature-intro">
+                    <span class="qura-feature-badge">Our Story</span>
+                    <h2 class="qura-feature-heading">Why I Built Qura</h2>
+                    <p class="qura-feature-tagline">Hi, I'm Harry. Like many of you reading this, I struggled with porn addiction for years. It cost me my mental health, relationships, and sense of self-worth. This is the app I wish I'd had during my darkest moments.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 The Journey                  -->
+    <!-- ============================================ -->
+
+    <section class="qura-section qura-section-alt">
+        <div class="cs-container">
+            <h2 class="qura-section-title">My Journey to Recovery</h2>
+            
+            <div class="qura-feature-details-grid">
+                <div class="qura-feature-description">
+                    <h3>The Struggle</h3>
+                    <p>It started innocently enough in my teens - curiosity, boredom, easy access. But by my early twenties, porn had become my default coping mechanism for stress, loneliness, and anxiety. Every time I felt uncomfortable, I'd escape into pixels on a screen.</p>
+                    
+                    <p>The consequences crept up slowly. I struggled with depression. My relationships suffered - intimacy became difficult, connection felt impossible. I isolated myself, convinced I was broken beyond repair. The shame was overwhelming, yet I couldn't stop.</p>
+                    
+                    <p>I tried everything: willpower alone (failed repeatedly), generic habit trackers (too impersonal), porn blockers (easily bypassed), even therapy (helpful but expensive and not always available when I needed it most). Nothing addressed the core issue - I needed tools for the hardest moments AND a framework for long-term recovery.</p>
+                </div>
+                
+                <div class="qura-feature-highlights">
+                    <h3>Finding What Works</h3>
+                    <p>My breakthrough came when I stopped relying on willpower and started using a system. I discovered that recovery required multiple tools working together:</p>
+                    
+                    <ul class="qura-feature-list">
+                        <li><strong>Tracking:</strong> Measuring my progress made the invisible visible</li>
+                        <li><strong>Breathing exercises:</strong> Calmed my nervous system during urges</li>
+                        <li><strong>Meditation:</strong> Taught me to observe urges without acting</li>
+                        <li><strong>Wisdom literature:</strong> Stoic philosophy gave me discipline</li>
+                        <li><strong>Emergency interventions:</strong> Real strategies saved me countless times</li>
+                    </ul>
+                    
+                    <p>Most importantly, I learned to treat myself with compassion instead of punishment. Recovery isn't linear. There were setbacks, but each one taught me something.</p>
+                </div>
+            </div>
+            
+            <!-- Transformation -->
+            <div class="qura-feature-description" style="margin-top: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h3>The Transformation</h3>
+                <p>Today, I'm not the same person who started this journey. The depression lifted. My relationships deepened. I found genuine confidence and self-respect that no amount of success or achievement had given me before.</p>
+                
+                <p>But more than personal freedom, I gained a mission: to help others find the same path. Too many men are suffering in silence, convinced they're uniquely broken, trying to fight with inadequate tools. They deserve better.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Why Qura                    -->
+    <!-- ============================================ -->
+
+    <section class="qura-section">
+        <div class="cs-container">
+            <h2 class="qura-section-title">Why Qura Exists</h2>
+            
+            <div class="qura-benefits-grid">
+                
+                <div class="qura-benefit-card">
+                    <div class="qura-benefit-icon">🛠️</div>
+                    <h3>All the Tools in One Place</h3>
+                    <p>I had to cobble together solutions from multiple apps, books, and therapists. Qura combines everything that actually works into one cohesive system.</p>
+                </div>
+                
+                <div class="qura-benefit-card">
+                    <div class="qura-benefit-icon">🤖</div>
+                    <h3>AI That Understands</h3>
+                    <p>Aida isn't a generic chatbot - she's trained specifically for porn addiction recovery, with contextual memory of your journey. It's like having a therapist available 24/7.</p>
+                </div>
+                
+                <div class="qura-benefit-card">
+                    <div class="qura-benefit-icon">🎯</div>
+                    <h3>Built for Real Crises</h3>
+                    <p>Most apps fail when you need them most. Qura's panic button provides immediate, multi-layered intervention designed for those crucial 10 minutes when urges are strongest.</p>
+                </div>
+                
+                <div class="qura-benefit-card">
+                    <div class="qura-benefit-icon">💝</div>
+                    <h3>Compassion, Not Shame</h3>
+                    <p>Recovery apps often feel punitive. Qura is built on the principle that helped me most: treat yourself with the same patience and compassion you'd show a good friend.</p>
+                </div>
+                
+            </div>
+            
+            <!-- Mission Statement Box -->
+            <div style="max-width: 800px; margin: 3rem auto 0; padding: 2.5rem; background: rgba(0, 0, 0, 0.03); border-left: 4px solid var(--primary); border-radius: 8px;">
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--bodyTextColor);">
+                    <strong style="color: var(--headerColor);">My mission is simple:</strong> Give you the comprehensive, compassionate tools I wish I'd had. Every feature in Qura exists because I needed it during my recovery. The app I'm building is the app that would have saved me years of struggle.
+                </p>
+                
+                <p style="font-size: 1.125rem; line-height: 1.8; margin: 0; color: var(--bodyTextColor);">
+                    You're not broken. You're not uniquely flawed. You're dealing with an addiction that hijacks one of the most powerful drives in human biology. That's not weakness - that's neuroscience. And with the right tools, you can absolutely break free.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Our Commitment                 -->
+    <!-- ============================================ -->
+
+    <section class="qura-section qura-section-alt">
+        <div class="cs-container">
+            <h2 class="qura-section-title">Our Commitment to You</h2>
+            
+            <div class="qura-reading-features">
+                
+                <div class="qura-reading-feature">
+                    <div class="qura-reading-icon">🔒</div>
+                    <h3>Your Privacy is Sacred</h3>
+                    <p>I know the shame associated with this struggle. Your data is encrypted, anonymous, and never shared. Ever. Recovery without fear of exposure.</p>
+                </div>
+                
+                <div class="qura-reading-feature">
+                    <div class="qura-reading-icon">🔬</div>
+                    <h3>Evidence-Based Approach</h3>
+                    <p>Every feature is grounded in research - CBT, ACT, mindfulness-based relapse prevention, neuroscience. No gimmicks, just what actually works.</p>
+                </div>
+                
+                <div class="qura-reading-feature">
+                    <div class="qura-reading-icon">💪</div>
+                    <h3>Continuously Improving</h3>
+                    <p>Qura will evolve based on user feedback and new research. This isn't a finished product - it's a growing toolkit that gets better with your input.</p>
+                </div>
+                
+                <div class="qura-reading-feature">
+                    <div class="qura-reading-icon">🤝</div>
+                    <h3>Community Driven</h3>
+                    <p>Founding members will shape Qura's future. Your struggles, successes, and suggestions directly influence what features we build next.</p>
+                </div>
+                
+                <div class="qura-reading-feature">
+                    <div class="qura-reading-icon">🎯</div>
+                    <h3>Affordable Access</h3>
+                    <p>Recovery shouldn't be a luxury. While AI therapy and comprehensive features cost money to build, we're committed to keeping Qura accessible.</p>
+                </div>
+                
+                <div class="qura-reading-feature">
+                    <div class="qura-reading-icon">❤️</div>
+                    <h3>Built with Care</h3>
+                    <p>I'm not a corporation trying to maximize profits. I'm someone who's been where you are, building the solution I desperately needed. Your recovery is personal to me.</p>
+                </div>
+                
             </div>
         </div>
     </section>

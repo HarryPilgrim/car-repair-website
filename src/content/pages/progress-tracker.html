@@ -1,0 +1,128 @@
+---
+title: "Progress Tracker | Porn Addiction Recovery App | Qura"
+description: "Track your porn-free days with Qura's visual progress tracker. Set goals, view stats, celebrate milestones. The #1 feature for quitting porn addiction."
+permalink: "/progress-tracker/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+{% endblock %}
+
+{% block body %}
+
+{% from "layouts/app-feature-page.html" import featurePage %}
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <span class="cs-int-title">Progress Tracker</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/progress-tracker/" class="cs-link cs-active">Progress Tracker</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
+        <!--Desktop Image-->
+        <img src="/assets/images/banner.jpg" alt="Progress Tracker" width="1920" height="482" loading="eager" decoding="async">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--              Feature Content                 -->
+<!-- ============================================ -->
+
+{{ featurePage({
+    badge: "Core Feature",
+    heading: "Track Your Recovery Journey",
+    tagline: "What gets measured gets managed. See your progress visually and celebrate every milestone.",
+    title: "Progress Tracker",
+    
+    screenshots: [
+        "/assets/images/pic01.webp",
+        "/assets/images/pic04.webp"
+    ],
+    
+    videoId: "t3WikraXsz8",
+    videoTitle: "📊 Progress Tracker Demo",
+    videoDescription: "Track your 🌽 free days, include NoFap if you want. Set your targets, and see graphically how you are doing. Number 1 in features - because what gets measured gets managed.",
+    
+    description: "<p>Qura's Progress Tracker is designed specifically for porn addiction recovery. Unlike generic habit trackers, ours understands the unique challenges of overcoming porn addiction and provides the insights you need to succeed.</p>
+    
+    <p>Track both porn-free days and optional NoFap streaks. Set custom goals that matter to you, whether it's 7 days, 30 days, or 90 days. Our beautiful visual calendar shows your progress at a glance, with color-coded days that make patterns easy to spot.</p>
+    
+    <p>But it's more than just counting days. Our tracker helps you understand your journey with detailed graphs, weekly reports, and milestone celebrations that keep you motivated. Export your data for therapist sessions or personal reflection.</p>
+    
+    <p>Recovery isn't linear - you'll have good days and challenging days. The tracker helps you see the bigger picture and recognize patterns in your behavior, making it easier to identify triggers and high-risk situations before they become problems.</p>",
+    
+    features: [
+        "Visual calendar showing porn-free days at a glance",
+        "Optional NoFap tracking integration", 
+        "Customizable recovery goals and milestone targets",
+        "Beautiful graphs showing progress trends over time",
+        "Streak counter with motivational milestone notifications",
+        "Weekly and monthly progress summary reports",
+        "Export data for therapist sessions or personal records",
+        "Privacy-focused - all data is encrypted and secure",
+        "Works offline - syncs automatically when connected",
+        "Set reminders for daily check-ins and affirmations"
+    ],
+    
+    benefits: [
+        {
+            icon: "📈",
+            title: "See Your Success",
+            description: "Visual proof of your progress keeps motivation high. Watching your streak grow day by day is incredibly rewarding and reinforces positive behavior."
+        },
+        {
+            icon: "🎯",
+            title: "Set Clear Goals",
+            description: "Having specific targets (7, 30, 90 days) gives you something concrete to work toward. Breaking recovery into achievable milestones makes the journey less overwhelming."
+        },
+        {
+            icon: "🧠",
+            title: "Understand Patterns",
+            description: "Identify triggers and high-risk times by reviewing your progress data over weeks and months. Knowledge is power in recovery."
+        },
+        {
+            icon: "🏆",
+            title: "Celebrate Wins",
+            description: "Milestone notifications acknowledge your achievements and reinforce positive behavior. Every victory matters, no matter how small."
+        }
+    ],
+    
+    seoTitle: "The Best Porn Addiction Progress Tracker App",
+    seoText: "<p>When recovering from porn addiction, tracking your progress is essential. Studies show that people who actively track their recovery have 3x higher success rates than those who don't. Qura's tracker is built specifically for porn addiction recovery, not just generic habit tracking.</p>
+    
+    <p>Whether you're looking for a porn-free day counter, NoFap tracker, or comprehensive recovery app, Qura gives you the tools to measure what matters. Our app helps you quit porn for good with data-driven insights and motivational features designed for long-term success.</p>
+    
+    <p>Join the people using Qura to break free from porn addiction. Track your progress, understand your patterns, and build the life you deserve. Your recovery journey starts with a single day - let Qura help you count them all.</p>",
+    
+    keywords: [
+        "porn addiction tracker",
+        "porn free day counter",
+        "NoFap tracker app",
+        "quit porn app",
+        "porn addiction recovery app",
+        "PIED recovery tracker",
+        "porn blocker with tracking",
+        "addiction progress tracking",
+        "porn addiction statistics app",
+        "recovery milestone tracker"
+    ]
+}) }}
+
+{% include 'sections/cta.html' %}
+
+{% endblock %}

@@ -6,13 +6,13 @@
     <div class="cs-container">
         <!--Nav Logo-->
         <a href="/" class="cs-logo" aria-label="back to home">
-            <img class="cs-logo" src="/assets/svgs/logo-black.svg" alt="Rapid Crash Repairs"  width="210" height="29" aria-hidden="true" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/logo-black.svg" alt="Qura"  width="210" height="29" aria-hidden="true" decoding="async">
             <!-- <img class="cs-logo-light" src="/assets/svgs/logo-light.svg" alt="Rapid Crash Repairs"  width="210" height="29" aria-hidden="true" decoding="async"> -->
         </a>
         <!--Navigation List-->
         <nav class="cs-nav" role="navigation">
             <!--Mobile Nav Toggle-->
-            <button class="cs-toggle" aria-label="mobile menu toggle">
+            <button class="cs-toggle" aria-label="mobile menu toggle" aria-expanded="false">
                 <div class="cs-box" aria-hidden="true">
                     <span class="cs-line cs-line1" aria-hidden="true"></span>
                     <span class="cs-line cs-line2" aria-hidden="true"></span>
@@ -23,42 +23,57 @@
             <div class="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                     <li class="cs-li">
-                        <a href="/" class="cs-li-link {% if page.url == "/" %} cs-active {% endif %}">
+                        <a href="/" class="cs-li-link {% if page.url == '/' %} cs-active {% endif %}">
                             Home
                         </a>
                     </li>
                     <li class="cs-li">
-                        <a href="/about/" class="cs-li-link {% if page.url == "/about/" %} cs-active {% endif %}">
+                        <a href="/about/" class="cs-li-link {% if page.url == '/about/' %} cs-active {% endif %}">
                             About
                         </a>
                     </li>
                     <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                     <li class="cs-li cs-dropdown">
-                        <span class="cs-li-link {% if page.url == "/project-one/" or page.url == "/project-two/" %} cs-active {% endif %}">
-                            Projects
+                        <span class="cs-li-link {% if page.url == '/project-one/' or page.url == '/project-two/' %} cs-active {% endif %}">
+                            Features
                             <img class="cs-drop-icon" src="/assets/svgs/dropdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                         </span>
                         <ul class="cs-drop-ul">
-                            <li class="cs-drop-li">
-                                <a href="/project-one/" class="cs-li-link cs-drop-link">Project One</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="/project-two/" class="cs-li-link cs-drop-link">Project Two</a>
-                            </li>
+                                    <li class="cs-drop-li">
+                                        <a href="/progress-tracker/" class="cs-li-link cs-drop-link">Progress Tracker</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+                                        <a href="/ai-therapist/" class="cs-li-link cs-drop-link">AI Therapist</a>
+                                    </li>
+                                    <li class="cs-drop-li">
+    <a href="/wisdom-reader/" class="cs-li-link cs-drop-link">Wisdom Reader</a>
+</li>
+<li class="cs-drop-li">
+    <a href="/breathing-exercises/" class="cs-li-link cs-drop-link">Breathing Exercises</a>
+</li>
+<li class="cs-drop-li">
+    <a href="/meditation/" class="cs-li-link cs-drop-link">Meditation</a>
+</li>
+<li class="cs-drop-li">
+    <a href="/recovery-tree/" class="cs-li-link cs-drop-link">Recovery Tree</a>
+</li>
+<li class="cs-drop-li">
+    <a href="/panic-button/" class="cs-li-link cs-drop-link">Panic Button</a>
+</li>
                         </ul>
                     </li>
-                    <li class="cs-li">
-                        <a href="/reviews/" class="cs-li-link {% if page.url == "/reviews/" %} cs-active {% endif %}">
+                    <!-- <li class="cs-li">
+                        <a href="/reviews/" class="cs-li-link {% if page.url == '/reviews/' %} cs-active {% endif %}">
                             Reviews
                         </a>
-                    </li>
+                    </li> -->
                     <li class="cs-li">
-                        <a href="/blog/" class="cs-li-link {% if page.url == "/blog/" %} cs-active {% endif %}">
+                        <a href="/blog/" class="cs-li-link {% if page.url == '/blog/' %} cs-active {% endif %}">
                             Blog
                         </a>
                     </li>
                     <li class="cs-li cs-hide-on-desktop">
-                        <a href="/contact/" class="cs-li-link {% if page.url == "/contact/" %} cs-active {% endif %}">
+                        <a href="/contact/" class="cs-li-link {% if page.url == '/contact/' %} cs-active {% endif %}">
                             Contact
                         </a>
                     </li>

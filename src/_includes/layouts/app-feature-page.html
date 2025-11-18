@@ -1,0 +1,146 @@
+{# ═══════════════════════════════════════════════════════════════════════════
+   FEATURE PAGE MACRO - Uses standard CodeStitch banner + homepage-style sections
+   ═══════════════════════════════════════════════════════════════════════════ #}
+
+{% macro featurePage(data) %}
+
+<!-- Phone Showcase Section -->
+<section id="qura-feature-phone" class="qura-section">
+    <div class="cs-container">
+        <div class="qura-feature-phone-content">
+            
+            <div class="qura-feature-intro">
+                {% if data.badge %}
+                <span class="qura-feature-badge">{{ data.badge }}</span>
+                {% endif %}
+                
+                <h2 class="qura-feature-heading">{{ data.heading }}</h2>
+                <p class="qura-feature-tagline">{{ data.tagline }}</p>
+            </div>
+            
+            <!-- Phone Mockup - Same as Homepage -->
+            <div class="qura-phone-mockup">
+                <div class="qura-phone-speaker"></div>
+                
+                <div class="qura-phone-screen">
+                    {% if data.screenshots %}
+                        {% for screenshot in data.screenshots %}
+                        <img src="{{ screenshot }}" 
+                             alt="{{ data.title }} screenshot {{ loop.index }}" 
+                             class="qura-screen-img {% if loop.first %}active{% endif %}" 
+                             loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+                             width="300"
+                             height="650">
+                        {% endfor %}
+                    {% else %}
+                        <img src="{{ data.screenshot }}" 
+                             alt="{{ data.title }}" 
+                             class="qura-screen-img active" 
+                             loading="eager"
+                             width="300"
+                             height="650">
+                    {% endif %}
+                </div>
+                
+                <div class="qura-phone-button"></div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Video Demo Section - Same Style as Homepage -->
+{% if data.videoId %}
+<section id="qura-feature-video" class="qura-section">
+    <div class="cs-container">
+        <header class="qura-section-header">
+            <h2>See {{ data.title }} In Action</h2>
+            <p>Watch how this feature helps you on your recovery journey</p>
+        </header>
+        
+        <div class="qura-single-video-wrapper">
+            <article class="qura-video-card">
+                <div class="qura-video-wrapper">
+                    <div class="qura-youtube-lite" data-video-id="{{ data.videoId }}">
+                        <img class="qura-youtube-thumb" 
+                             src="https://i.ytimg.com/vi/{{ data.videoId }}/hqdefault.jpg" 
+                             alt="{{ data.title }} demo" 
+                             loading="lazy"
+                             width="480"
+                             height="360">
+                        <button class="qura-youtube-play" aria-label="Play video"></button>
+                    </div>
+                </div>
+                <div class="qura-video-info">
+                    <h3>{{ data.videoTitle or data.title }}</h3>
+                    <p>{{ data.videoDescription }}</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Feature Details Section -->
+<section id="qura-feature-details" class="qura-section">
+    <div class="cs-container">
+        <div class="qura-feature-details-grid">
+            
+            <!-- Main Description -->
+            <div class="qura-feature-description">
+                <h2>How It Works</h2>
+                {{ data.description | safe }}
+            </div>
+            
+            <!-- Feature List -->
+            {% if data.features %}
+            <div class="qura-feature-highlights">
+                <h3>Key Features</h3>
+                <ul class="qura-feature-list">
+                    {% for feature in data.features %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Grid Section -->
+{% if data.benefits %}
+<section id="qura-feature-benefits" class="qura-section qura-section-alt">
+    <div class="cs-container">
+        <h2 class="qura-section-title">Why This Matters</h2>
+        <div class="qura-benefits-grid">
+            {% for benefit in data.benefits %}
+            <div class="qura-benefit-card">
+                <div class="qura-benefit-icon">{{ benefit.icon }}</div>
+                <h3>{{ benefit.title }}</h3>
+                <p>{{ benefit.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- SEO Keywords Section -->
+{% if data.keywords %}
+<section id="qura-feature-seo" class="qura-section qura-section-dark">
+    <div class="cs-container">
+        <div class="qura-seo-content">
+            <h2>{{ data.seoTitle or "Why Choose Qura for Recovery?" }}</h2>
+            {{ data.seoText | safe }}
+            <div class="qura-keywords-list">
+                {% for keyword in data.keywords %}
+                <span class="qura-keyword-tag">{{ keyword }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endmacro %}

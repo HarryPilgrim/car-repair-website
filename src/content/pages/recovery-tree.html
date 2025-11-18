@@ -1,0 +1,146 @@
+---
+title: "Recovery Tree | Daily Growth Visualization | Qura"
+description: "Watch your recovery tree grow over 30 days as you nurture it daily. A beautiful metaphor for self-care and the daily commitment recovery requires."
+permalink: "/recovery-tree/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+{% endblock %}
+
+{% block body %}
+
+{% from "layouts/app-feature-page.html" import featurePage %}
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <span class="cs-int-title">Recovery Tree</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/recovery-tree/" class="cs-link cs-active">Recovery Tree</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="/assets/images/banner.jpg" type="image/jpeg">
+        <!--Desktop Image-->
+        <img src="/assets/images/banner.jpg" alt="Recovery Tree" width="1920" height="482" loading="eager" decoding="async">
+    </picture>
+</div>
+
+<!-- Phone Showcase Section -->
+<section id="qura-feature-phone" class="qura-section">
+    <div class="cs-container">
+        <div class="qura-feature-phone-content">
+            
+            <div class="qura-feature-intro">
+                <span class="qura-feature-badge">Daily Practice</span>
+                
+                <h2 class="qura-feature-heading">Nurture Your Recovery, Watch It Grow</h2>
+                <p class="qura-feature-tagline">Your recovery tree grows over 30 days as you water it daily. A living reminder that recovery requires consistent care - just like you deserve.</p>
+            </div>
+            
+            <!-- Phone Mockup -->
+            <div class="qura-phone-mockup">
+                <div class="qura-phone-speaker"></div>
+                
+                <div class="qura-phone-screen">
+                    <img src="/assets/images/tree1.png" 
+                         alt="Recovery Tree needs water" 
+                         class="qura-screen-img active" 
+                         loading="eager"
+                         width="300"
+                         height="650">
+                    <img src="/assets/images/tree2.png" 
+                         alt="Recovery Tree watered" 
+                         class="qura-screen-img" 
+                         loading="lazy"
+                         width="300"
+                         height="650">
+                </div>
+                
+                <div class="qura-phone-button"></div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Video Demo Section -->
+<section id="qura-feature-video" class="qura-section">
+    <div class="cs-container">
+        <header class="qura-section-header">
+            <h2>See Your Tree Grow</h2>
+            <p>Watch the transformation from seed to full tree as you commit to daily care</p>
+        </header>
+        
+        <div class="qura-single-video-wrapper">
+            <article class="qura-video-card">
+                <div class="qura-video-wrapper">
+                    <div class="qura-youtube-lite" data-video-id="AnGegorQIaU">
+                        <img class="qura-youtube-thumb" 
+                             src="https://i.ytimg.com/vi/DUMMY567890/hqdefault.jpg" 
+                             alt="Recovery Tree demo" 
+                             loading="lazy"
+                             width="480"
+                             height="360">
+                        <button class="qura-youtube-play" aria-label="Play video"></button>
+                    </div>
+                </div>
+                <div class="qura-video-info">
+                    <h3>🌳 Recovery Tree in Action</h3>
+                    <p>From seedling to mighty oak - watch how your daily commitment transforms into visible growth. Miss a day? The tree simply pauses, waiting for you to return. No judgment, just patience.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Explanation Section -->
+<section class="qura-section qura-section-alt">
+    <div class="cs-container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 class="qura-section-title">The Metaphor of the Tree</h2>
+            
+            <div class="qura-feature-description">
+                <p>Recovery isn't a destination - it's a daily practice of self-care and commitment. The Recovery Tree is a gentle reminder of this truth.</p>
+                
+                <p>Each day you open the app and "water" your tree, it grows a little more. A tiny seedling becomes a sapling, then a young tree, and finally - after 30 days of consistent care - a strong, mature oak with deep roots.</p>
+                
+                <p>The tree doesn't judge you. If you forget to water it one day, it simply pauses. It doesn't wither or die. It waits patiently for you to return, ready to continue growing the moment you come back. This is how you should treat yourself - with patience, not punishment.</p>
+                
+                <p>The message is simple but profound: <strong>You deserve the same care and attention you give this tree.</strong> Recovery requires daily nurturing. Some days will be easier than others, but the key is consistency and self-compassion when you stumble.</p>
+                
+                <p>By the time your tree reaches full maturity, you'll have built a 30-day habit of daily check-ins. You'll have proven to yourself that you can commit to something, one day at a time. And just like a real tree, your recovery will have roots strong enough to weather any storm.</p>
+            </div>
+            
+            <!-- Quick Features List -->
+            <div class="qura-feature-highlights" style="margin-top: 3rem;">
+                <h3>How It Works</h3>
+                <ul class="qura-feature-list">
+                    <li>Water your tree once per day with a simple tap</li>
+                    <li>Watch it grow through beautiful stages over 30 days</li>
+                    <li>Miss a day? The tree pauses (doesn't die or reset)</li>
+                    <li>Daily reminder notification to care for your tree</li>
+                    <li>Celebrate when your tree reaches full maturity</li>
+                    <li>Start a new tree for the next 30-day cycle</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'sections/cta.html' %}
+
+{% endblock %}

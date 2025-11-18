@@ -100,3 +100,62 @@ document.addEventListener("keydown", (event) => {
         toggleMenu();
     }
 });
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SMART NAVIGATION - Hide on scroll down, show on scroll up
+// ═══════════════════════════════════════════════════════════════════════════
+
+(function() {
+    'use strict';
+
+    let lastScrollTop = 0;
+    let scrollThreshold = 100; // How far to scroll before hiding nav
+    const nav = document.getElementById('cs-navigation');
+    
+    if (!nav) return;
+
+    function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Don't hide nav if mobile menu is open
+        if (nav.classList.contains('cs-active')) {
+            return;
+        }
+        
+        // Add 'scrolled' class when past threshold
+        if (scrollTop > 50) {
+            nav.classList.add('cs-scrolled');
+        } else {
+            nav.classList.remove('cs-scrolled');
+        }
+        
+        // Only hide/show if we've scrolled past the threshold
+        if (scrollTop > scrollThreshold) {
+            if (scrollTop > lastScrollTop) {
+                // Scrolling DOWN - hide nav
+                nav.classList.add('cs-scroll-hide');
+            } else {
+                // Scrolling UP - show nav
+                nav.classList.remove('cs-scroll-hide');
+            }
+        } else {
+            // At top of page - always show
+            nav.classList.remove('cs-scroll-hide');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }
+
+    // Throttle scroll events for performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+})();

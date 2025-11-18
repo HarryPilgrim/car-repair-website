@@ -6,6 +6,32 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
+<---       About Page           -->
+<--- -------------------------- -*/
+
+/*-- -------------------------- -->
+<---       About Page           -->
+<--- -------------------------- -*/
+
+/* Just override dark mode for mission statement box */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #about-mission div[style*="background"] {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-left-color: var(--primaryLight) !important;
+        }
+        
+        #about-mission strong {
+            color: #fff !important;
+        }
+        
+        #about-mission p {
+            color: var(--bodyTextColorWhite) !important;
+        }
+    }
+}
+
+/*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
 

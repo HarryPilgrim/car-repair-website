@@ -1,0 +1,415 @@
+/*-- -------------------------- -->
+<---   Feature Page Styles     -->
+<--- -------------------------- -*/
+
+/* Feature Hero */
+@media only screen and (min-width: 0rem) {
+    .qura-feature-hero {
+        padding: clamp(6rem, 15vw, 10rem) 1rem clamp(3rem, 10vw, 5rem);
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .qura-feature-hero-content {
+        max-width: calc(1280 / 16 * 1rem);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .qura-feature-hero-text {
+        text-align: center;
+        max-width: 700px;
+    }
+
+    .qura-feature-badge {
+        display: inline-block;
+        background: var(--primary);
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .qura-feature-hero-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-hero-intro {
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: var(--bodyTextColor);
+    }
+
+    /* Phone mockup styles (reuse from critical.scss) */
+    .qura-feature-phone {
+        width: 280px;
+        padding: 50px 12px 65px 12px;
+        background: #222;
+        border-radius: 35px;
+        box-shadow: 0 0 0 2px #444, 0 10px 40px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+
+    .qura-phone-speaker {
+        position: absolute;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: #444;
+        border-radius: 2px;
+    }
+
+    .qura-phone-screen {
+        width: 100%;
+        height: 500px;
+        background: #000;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .qura-screen-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .qura-screen-img.active {
+        opacity: 1;
+    }
+
+    .qura-phone-button {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        border: 2px solid #444;
+        border-radius: 50%;
+    }
+
+    /* Video Demo Section */
+    .qura-feature-demo {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+        background: #fff;
+    }
+
+    .qura-section-title {
+        text-align: center;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 900;
+        margin-bottom: 3rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-video-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .qura-feature-video-wrapper .qura-youtube-lite {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        background: #000;
+        cursor: pointer;
+    }
+
+    .qura-feature-video-wrapper .qura-youtube-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .qura-feature-video-wrapper .qura-youtube-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 56px;
+        background: rgba(255, 0, 0, 0.9);
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .qura-feature-video-wrapper .qura-youtube-play::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        width: 0;
+        height: 0;
+        border-left: 24px solid #fff;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+    }
+
+    .qura-feature-video-wrapper .qura-youtube-lite:hover .qura-youtube-play {
+        background: rgba(255, 0, 0, 1);
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Feature Details Section */
+    .qura-feature-details {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+        background: #f8f9fa;
+    }
+
+    .qura-feature-details-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .qura-feature-description {
+        margin-bottom: 3rem;
+    }
+
+    .qura-feature-description h2 {
+        font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-description p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        color: var(--bodyTextColor);
+    }
+
+    .qura-feature-highlights h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+    }
+
+    .qura-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .qura-feature-list li {
+        padding: 1rem 0 1rem 2.5rem;
+        position: relative;
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+        font-size: 1.0625rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .qura-feature-list li:last-child {
+        border-bottom: none;
+    }
+
+    .qura-feature-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 900;
+        font-size: 1.5rem;
+        top: 0.75rem;
+    }
+
+    /* Benefits Section */
+    .qura-feature-benefits {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+        background: #fff;
+    }
+
+    .qura-benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .qura-benefit-card {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .qura-benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .qura-benefit-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .qura-benefit-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    .qura-benefit-card p {
+        line-height: 1.6;
+        color: var(--bodyTextColor);
+    }
+
+    /* SEO Section */
+    .qura-feature-seo {
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primaryLight) 100%);
+        color: #fff;
+    }
+
+    .qura-seo-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .qura-seo-content h2 {
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        color: #fff;
+    }
+
+    .qura-seo-content p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    .qura-keywords-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .qura-keyword-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s;
+    }
+
+    .qura-keyword-tag:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .qura-feature-hero-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .qura-feature-hero-text {
+        text-align: left;
+        flex: 1;
+    }
+
+    .qura-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .qura-feature-phone {
+        width: 320px;
+    }
+
+    .qura-phone-screen {
+        height: 600px;
+    }
+
+    .qura-benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        .qura-feature-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--medium) 100%);
+        }
+
+        .qura-feature-hero-title,
+        .qura-feature-description h2,
+        .qura-feature-highlights h3,
+        .qura-section-title,
+        .qura-benefit-card h3 {
+            color: #fff;
+        }
+
+        .qura-feature-hero-intro,
+        .qura-feature-description p,
+        .qura-feature-list li,
+        .qura-benefit-card p {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .qura-feature-details {
+            background: var(--dark);
+        }
+
+        .qura-feature-benefits {
+            background: var(--medium);
+        }
+
+        .qura-benefit-card {
+            background: var(--dark);
+        }
+
+        .qura-feature-demo {
+            background: var(--medium);
+        }
+    }
+}
+    
